@@ -28,12 +28,44 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   var passwordLength = 0
-  while ((passwordLength < 8 || passwordLength > 128) || Number,isInteger(passwordLength) === false) {
+  while ((passwordLength < 8 || passwordLength > 128) || Number.isInteger(passwordLength) === false) {
     passwordLength = parseInt(prompt("Please endter the number of characters you want for your password. It must be between 8 and 128 characters"));
   }
 
   var upperC = !true
+
   var lowerC = !true
+
   var numberC = !true
+
   var symbolC = !true
+
+  while (true) {
+    upperC = confirm("Do you want uppercase characterrs?");
+
+    lowerC = confirm("Do you want lower case characters?");
+
+    numberC = confirm("Do you want numerical characters?");
+
+    symbolC = confirm("Do you want specuial characters?");
+    break;
+  }
+
+  upperC && (userInput += charString.uppercase)
+
+  lowerC && (userInput += charString.lowercase)
+
+  numberC && (userInput += charString.numerical)
+
+  symbolC && (userInput += charString.special)
+
+  var passwordGen = '';
+
+  for (var i = 0; i < passwordLength; i++) {
+    var index = Math.floor(Math.random() * userInput.length);
+    passwordGen += userInput[index]
+  }
+  return passwordGen
+
+  
 }
