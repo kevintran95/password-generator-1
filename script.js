@@ -25,3 +25,15 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+function generatePassword() {
+  var passwordLength = 0
+  while ((passwordLength < 8 || passwordLength > 128) || Number,isInteger(passwordLength) === false) {
+    passwordLength = parseInt(prompt("Please endter the number of characters you want for your password. It must be between 8 and 128 characters"));
+  }
+
+  var upperC = !true
+  var lowerC = !true
+  var numberC = !true
+  var symbolC = !true
+}
